@@ -27,7 +27,7 @@ const calculator = {
     }
 }
 
-const ceaserCipher = ((string) => {
+const ceaserCipher = (() => {
     const characters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
     const checkString = (string) => {
@@ -74,9 +74,65 @@ const ceaserCipher = ((string) => {
     }
 })();
 
+const analyzeArray = ((arr) => {
+
+    const arrLength = (arr) => {
+        return arr.length;
+    };
+
+    const arrAverage = (arr) => {
+        let sum = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            sum += Number(arr[i]);
+        }
+        let average = sum / arr.length
+        return average;
+    }
+
+    const minValue = (arr) => {
+        let min = 5;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] <= min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
+    const maxValue = (arr) => {
+        let max = 5;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    const makeObj = (arr) => {
+        let object = {};
+        object.average = arrAverage(arr);
+        object.min = minValue(arr);
+        object.max = maxValue(arr);
+        object.length = arrLength(arr);
+
+        return object;
+    }
+
+    return {
+        arrLength,
+        arrAverage,
+        minValue,
+        maxValue,
+        makeObj,
+    }
+})();
+
 export {
     capitalize,
     reverseString,
     calculator,
     ceaserCipher,
+    analyzeArray,
 }

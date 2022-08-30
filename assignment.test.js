@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, ceaserCipher } from './assignment'
+import { capitalize, reverseString, calculator, ceaserCipher, analyzeArray } from './assignment'
 
 test('capitalize first character', () => {
     expect(capitalize('jurgis')).toBe('Jurgis');
@@ -21,7 +21,7 @@ test('Calculator multiply', () => {
     expect(calculator.multiply(3, 8)).toBe(24);
 });
 
-//these test were commented out because they work 1 by 1, now testing the whole ceaserCipher
+//-------------------------------------------------------------------------------------------------------
 test('ceaseCipher string places', () => {
     expect(ceaserCipher.checkString('mama')).toStrictEqual([12, 0, 12, 0]);
 });
@@ -36,4 +36,20 @@ test('ceaserCipher full test', () => {
 })
 test('ceaserCipher full test II', () => {
     expect(ceaserCipher.runCeaserCipher('karolina')).toBe('lbspmjob');
+})
+//-----------------------------------------------------------------------------------------------------
+test('analyzeArray array length', () => {
+    expect(analyzeArray.arrLength([1, 8, 3, 4, 2, 6])).toBe(6);
+})
+test('analyzeArray array average', () => {
+    expect(analyzeArray.arrAverage([1, 8, 3, 4, 2, 6])).toBe(4);
+})
+test('analyzeArray array min value', () => {
+    expect(analyzeArray.minValue([1, 8, 3, 4, 2, 6])).toBe(1);
+})
+test('analyzeArray array max value', () => {
+    expect(analyzeArray.maxValue([1, 8, 3, 4, 2, 6])).toBe(8);
+})
+test('analyzeArray object return', () => {
+    expect(analyzeArray.makeObj([1, 8, 3, 4, 2, 6])).toStrictEqual({ average: 4, min: 1, max: 8, length: 6 });
 })
