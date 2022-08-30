@@ -58,10 +58,19 @@ const ceaserCipher = ((string) => {
         return word;
     }
 
+    const runCeaserCipher = (string) => {
+        const wordToArray = checkString(string);
+        const shiftedArray = shiftNumbers(wordToArray);
+        const reconstructedWord = constructWord(shiftedArray);
+
+        return reconstructedWord;
+    }
+
     return {
         checkString,
         shiftNumbers,
         constructWord,
+        runCeaserCipher,
     }
 })();
 

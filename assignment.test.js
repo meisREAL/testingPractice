@@ -21,7 +21,7 @@ test('Calculator multiply', () => {
     expect(calculator.multiply(3, 8)).toBe(24);
 });
 
-
+//these test were commented out because they work 1 by 1, now testing the whole ceaserCipher
 test('ceaseCipher string places', () => {
     expect(ceaserCipher.checkString('mama')).toStrictEqual([12, 0, 12, 0]);
 });
@@ -30,4 +30,10 @@ test('ceaserCipher shift arr numbers by 1', () => {
 });
 test('ceaserCipher constructing word', () => {
     expect(ceaserCipher.constructWord([12, 0, 12, 0])).toBe('mama');
+})
+test('ceaserCipher full test', () => {
+    expect(ceaserCipher.runCeaserCipher('mama')).toBe('nbnb');
+})
+test('ceaserCipher full test II', () => {
+    expect(ceaserCipher.runCeaserCipher('karolina')).toBe('lbspmjob');
 })
